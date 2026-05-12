@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-gray-900 bg-white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold tracking-tight;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl leading-tight;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl leading-tight;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+h4 {
+  @apply text-xl md:text-2xl;
+}
+
+/* Section alternating backgrounds */
+section {
+  @apply py-20 md:py-32;
+}
+
+section:nth-of-type(odd) {
+  @apply bg-white;
+}
+
+section:nth-of-type(even) {
+  @apply bg-gradient-light;
+}
+
+/* Button base styles */
+.btn {
+  @apply px-8 py-3 rounded-full font-semibold font-display uppercase tracking-wider transition-all duration-300 inline-flex items-center gap-2;
+}
+
+.btn-primary {
+  @apply bg-gradient-voci text-white shadow-lg hover:shadow-xl hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-white border-2 border-voci-blue text-voci-blue hover:bg-voci-light-blue transition-colors;
+}
+
+.btn-outline {
+  @apply border-2 border-white text-white hover:bg-white hover:text-voci-dark-blue transition-all;
+}
+
+/* Card base styles */
+.card {
+  @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2;
+}
+
+/* Icon badge */
+.icon-badge {
+  @apply w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center shadow-icon transition-all duration-300 hover:scale-110 hover:-translate-y-1;
+}
+
+/* Focus ring */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-voci-blue focus:ring-offset-2;
+}
+
+/* Smooth fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Text gradient utility */
+.text-gradient {
+  @apply bg-gradient-to-r from-voci-blue via-voci-red to-voci-gold bg-clip-text text-transparent;
+}
